@@ -17,86 +17,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
+        <ImageButton
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
+        <ImageButton
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageButton
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
 
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+        <ImageButton
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
-
-            android:text="Button" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:hint="e.g 8"
+            android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
+        <ImageButton
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
             android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
+            android:layout_columnWeight="1" android:contentDescription="Enter How Much Cookies You Want"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
-            android:text="Button" />
+
 
 
     </GridLayout>
