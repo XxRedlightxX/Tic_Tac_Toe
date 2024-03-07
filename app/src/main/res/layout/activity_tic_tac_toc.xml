@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    class="com.fragment.NavigationDrawerFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tic_Tac_Toc">
+
+    <TextView
+        android:id="@+id/txt_tour"
+        android:layout_width="106dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="144dp"
+        android:gravity="bottom|right"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="232dp" />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="350dp"
+        android:layout_height="397dp"
+        android:layout_margin="10dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="?attr/actionBarDivider" />
+
+        <ImageButton
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+        <ImageButton
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:contentDescription="Enter How Much Cookies You Want"
+            android:scaleType="fitCenter"
+            app:srcCompat="@color/cardview_dark_background" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/btn_recommencer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+
+        android:text="Recommencer"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="109dp" />
+
+    <TextView
+        android:id="@+id/txt_resultat"
+        android:layout_width="106dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="96dp"
+        android:text="brrrrrrrrr"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="31dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
