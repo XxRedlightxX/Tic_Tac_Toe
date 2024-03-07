@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
-import com.example.tic_tac_toe.databinding.ActivityMainBinding
+
 import java.util.*
 
 class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
@@ -24,7 +24,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
     private lateinit var buttons: Array<ImageButton>
     private lateinit var gridLayout: GridLayout
 
-
+    private lateinit var btn_recommencer : Button
 
 
     private var joueurTour : Boolean = true
@@ -40,7 +40,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
         setContentView(R.layout.activity_tic_tac_toc)
 
-
+        btn_recommencer = findViewById(R.id.btn_recommencer)
         txt_resutlat = findViewById(R.id.txt_resultat)
         var extras = intent.extras
 
@@ -63,14 +63,13 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
             )
 
-        for (boutton in buttons) {
-            boutton.setOnClickListener(this)
-
-
+        btn_recommencer.setOnClickListener() {
+            recommencerPartie()
         }
 
-
-
+        for (boutton in buttons) {
+            boutton.setOnClickListener(this)
+        }
 
 
 
@@ -78,47 +77,92 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
     }
 
 
+    fun recommencerPartie() {
+        Player1.clear()
+        Player2.clear()
+
+        for (bo in buttons) {
+            bo.setImageResource(R.drawable.ic_launcher_background)
+            bo.isEnabled = true
+        }
 
 
-
+    }
 
 
 
     override fun onClick(v: View?) {
         var cellId = 0
         if (v is ImageButton) {
-            when(v?.id)
-            {
-                R.id.btn1 -> cellId = 1
-                R.id.btn2 -> cellId = 2
-                R.id.btn3 -> cellId = 3
+            when (v?.id) {
+                R.id.btn1 -> cellId = 0
+                R.id.btn2 -> cellId = 1
+                R.id.btn3 -> cellId = 2
 
-                R.id.btn4 -> cellId = 4
-                R.id.btn5 -> cellId = 5
-                R.id.btn6 -> cellId = 6
+                R.id.btn4 -> cellId = 3
+                R.id.btn5 -> cellId = 4
+                R.id.btn6 -> cellId = 5
 
-                R.id.btn7 -> cellId = 7
-                R.id.btn8 -> cellId = 8
-                R.id.btn9 -> cellId = 9
+                R.id.btn7 -> cellId = 6
+                R.id.btn8 -> cellId = 7
+                R.id.btn9 -> cellId = 8
+
+                R.id.btn_recommencer -> {
+                    recommencerPartie()
+                }
+
+
             }
-            if (joueurTour ==true) {
+            if (joueurTour == true) {
                 v.setImageResource(androidx.appcompat.R.drawable.btn_radio_off_mtrl)
-                joueurTour= false
+                joueurTour = false
                 Player1.add(cellId)
                 v.isEnabled = false
                 CheckWinner()
 
-                println("Joueur 1"+" "+Player1.toString())
+                println("Joueur 1" + " " + Player1.toString())
 
-            } else if(joueurTour==false) {
-                v.setImageResource(androidx.constraintlayout.widget.R.drawable.abc_btn_default_mtrl_shape)
-                joueurTour=true
-                Player2.add(cellId)
-                println("Joueur 2"+" "+Player2.toString())
-                v.isEnabled = false
+            } else if (joueurTour == false) {
+
+
+                Adversaire()
+
+
+                //Player2.add(cellId)
+                println("Joueur 2" + " " + Player2.toString())
+                joueurTour = true
+                v.isEnabled = true
                 CheckWinner()
+
             }
         }
+
+    }
+
+
+
+
+    fun Adversaire() {
+
+
+
+        var randomIndex = Random().nextInt(buttons.size)
+        var cellId = buttons[randomIndex]
+
+
+
+        while (Player1.contains(randomIndex) || Player2.contains(randomIndex)) {
+
+            randomIndex = Random().nextInt(buttons.size)
+            cellId = buttons[randomIndex]
+        }
+
+
+        Player2.add(randomIndex)
+        cellId.setImageResource(androidx.appcompat.R.drawable.btn_radio_off_mtrl)
+
+
+
     }
 
     fun CheckWinner()
@@ -126,46 +170,56 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
         var winner = -1
 
         //row1
-        if (Player1.contains(1) && Player1.contains(2) && Player1.contains(3))
+        if (Player1.contains(0) && Player1.contains(1) && Player1.contains(2))
         {
             winner = 1
         }
-        if (Player2.contains(1) && Player2.contains(2) && Player2.contains(3))
+        if (Player2.contains(0) && Player2.contains(1) && Player2.contains(2))
         {
             winner = 2
         }
 
         //row2
-        if (Player1.contains(4) && Player1.contains(5) && Player1.contains(6))
+        if (Player1.contains(3) && Player1.contains(4) && Player1.contains(5))
         {
             winner = 1
         }
-        if (Player2.contains(4) && Player2.contains(5) && Player2.contains(6))
+        if (Player2.contains(3) && Player2.contains(4) && Player2.contains(5))
         {
             winner = 2
         }
 
         //row3
-        if (Player1.contains(7) && Player1.contains(8) && Player1.contains(9))
+        if (Player1.contains(6) && Player1.contains(7) && Player1.contains(8))
         {
             winner = 1
         }
-        if (Player2.contains(7) && Player2.contains(8) && Player2.contains(9))
+        if (Player2.contains(6) && Player2.contains(7) && Player2.contains(8))
         {
             winner = 2
         }
 
         //col1
-        if (Player1.contains(1) && Player1.contains(4) && Player1.contains(7))
+        if (Player1.contains(0) && Player1.contains(3) && Player1.contains(6))
         {
             winner = 1
         }
-        if (Player2.contains(1) && Player2.contains(4) && Player2.contains(7))
+        if (Player2.contains(0) && Player2.contains(3) && Player2.contains(6))
         {
             winner = 2
         }
 
         //col2
+        if (Player1.contains(1) && Player1.contains(4) && Player1.contains(7))
+        {
+            winner = 1
+        }
+        if (Player2.contains(1) && Player2.contains(3) && Player2.contains(7))
+        {
+            winner = 2
+        }
+
+        //col3
         if (Player1.contains(2) && Player1.contains(5) && Player1.contains(8))
         {
             winner = 1
@@ -175,32 +229,22 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
             winner = 2
         }
 
-        //col3
-        if (Player1.contains(3) && Player1.contains(6) && Player1.contains(9))
-        {
-            winner = 1
-        }
-        if (Player2.contains(3) && Player2.contains(6) && Player2.contains(9))
-        {
-            winner = 2
-        }
-
         //cross1
-        if (Player1.contains(1) && Player1.contains(5) && Player1.contains(9))
+        if (Player1.contains(0) && Player1.contains(4) && Player1.contains(8))
         {
             winner = 1
         }
-        if (Player2.contains(1) && Player2.contains(5) && Player2.contains(9))
+        if (Player2.contains(0) && Player2.contains(4) && Player2.contains(8))
         {
             winner = 2
         }
 
         //cross2
-        if (Player1.contains(3) && Player1.contains(5) && Player1.contains(7))
+        if (Player1.contains(2) && Player1.contains(4) && Player1.contains(6))
         {
             winner = 1
         }
-        if (Player2.contains(3) && Player2.contains(5) && Player2.contains(7))
+        if (Player2.contains(2) && Player2.contains(4) && Player2.contains(6))
         {
             winner = 2
         }
@@ -234,6 +278,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
             }
         }
     }
+
 
 
 
