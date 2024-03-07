@@ -37,10 +37,10 @@
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
-
             android:layout_columnWeight="1"
             android:contentDescription="Enter How Much Cookies You Want"
-            app:srcCompat="@color/cardview_dark_background" />
+            android:scaleType="fitCenter"
+            app:srcCompat="?attr/actionBarDivider" />
 
         <ImageButton
             android:id="@+id/btn2"

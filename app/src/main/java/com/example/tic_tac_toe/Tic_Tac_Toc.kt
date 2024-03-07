@@ -256,10 +256,12 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
         if (winner != -1)
         {
+
+
             if (winner == 1)
             {
                 if(setPlayer == 1) {
-                    Toast.makeText(this, "Player 1 Wins!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Joeur 1 a gagné", Toast.LENGTH_SHORT).show()
                     println("Joeur 1 a gagné")
                 }
                 else
@@ -272,16 +274,22 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
             {
                 if (setPlayer == 1) {
                     Toast.makeText(this, "Player 2 Wins!!", Toast.LENGTH_SHORT).show()
-                    println("Joeur 2 a gagné")
+                    println("Joueur 2 a gagné")
 
                 }
                 else
                 {
-                    Toast.makeText(this, "CPU Wins!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Égalité", Toast.LENGTH_SHORT).show()
+                    println("Égalité")
 
                 }
             }
-        }
+        }else if (winner == -1 && Player1.size + Player2.size == 9) {
+
+        Toast.makeText(this, "Égalité", Toast.LENGTH_SHORT).show()
+        println("Égalité")
+        return
+    }
     }
 
 
