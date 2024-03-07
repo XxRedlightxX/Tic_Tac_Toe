@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.view.View
 import android.view.View.OnClickListener
 import android.widget.*
-import com.example.tic_tac_toe.databinding.ActivityMainBinding
+
 import java.util.*
 
 class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
     lateinit var txt_resutlat : TextView
+    lateinit var txt_tour : TextView
     lateinit var btn1 : ImageButton
     lateinit var btn2 : ImageButton
     lateinit var btn3 : ImageButton
@@ -42,6 +43,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
         btn_recommencer = findViewById(R.id.btn_recommencer)
         txt_resutlat = findViewById(R.id.txt_resultat)
+        txt_tour = findViewById(R.id.txt_tour)
         var extras = intent.extras
 
         var nom = extras?.getString("nom")
@@ -91,6 +93,8 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
 
 
+
+
     override fun onClick(v: View?) {
         var cellId = 0
         if (v is ImageButton) {
@@ -114,8 +118,9 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
             }
             if (joueurTour == true) {
-                v.setImageResource(androidx.appcompat.R.drawable.btn_radio_off_mtrl)
+                v.setImageResource(R.drawable.x_png_35402)
                 joueurTour = false
+                txt_tour.setText("Tour des 0")
                 Player1.add(cellId)
                 v.isEnabled = false
                 CheckWinner()
@@ -126,7 +131,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
 
                  Adversaire()
-
+                txt_tour.setText("Tour des X")
 
                     //Player2.add(cellId)
                 println("Joueur 2" + " " + Player2.toString())
@@ -159,7 +164,7 @@ class Tic_Tac_Toc : AppCompatActivity(), OnClickListener {
 
 
         Player2.add(randomIndex)
-        cellId.setImageResource(androidx.appcompat.R.drawable.btn_radio_off_mtrl)
+        cellId.setImageResource(R.drawable.scribble_circle_8)
 
 
 
